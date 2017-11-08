@@ -1,1 +1,0 @@
-# rimamoto.github.io
