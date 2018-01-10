@@ -21,7 +21,7 @@ function preload() {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+    game.load.spritesheet('dude', 'assets/https://d1yn1kh78jj1rr.cloudfront.net/image/thumbnail/VphbM00/graphicstock-female-mouth-with-red-lips-sticking-tongue-out-in-cartoon-style_rtTMKxmOZ_thumb.jpg', 32, 48);
 
 }
 
@@ -54,7 +54,7 @@ function create() {
     ground.scale.setTo(2, 2);
 
     //  This stops it from falling away when you jump on it
-    ground.body.immovable = false;
+    ground.body.immovable = true;
 
     //  Now let's create two ledges
     var ledge = platforms.create(400, 400, 'ground');
@@ -64,7 +64,7 @@ function create() {
     ledge.body.immovable = true;
 
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 700, 'dude');
+    player = game.add.sprite(32, game.world.height - 300, 'dude');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -72,7 +72,7 @@ function create() {
     //  Player physics properties. Give the little guy a slight bounce.
     player.body.bounce.y = 0.7;
     player.body.gravity.y = 200;
-    player.body.collideWorldBounds = true;
+    player.body.collideWorldBounds = false;
 
     //  Our two animations, walking left and right.
     player.animations.add('left', [0, 1, 2, 3], 10, true);
@@ -85,13 +85,13 @@ function create() {
     stars.enableBody = true;
 
     //  Here we'll create 12 of them evenly spaced apart
-    for (var i = 0; i < 12; i++)
+    for (var i = 0; i < 15; i++)
     {
         //  Create a star inside of the 'stars' group
         var star = stars.create(i * 70, 0, 'star');
 
         //  Let gravity do its thing
-        star.body.gravity.y = 200;
+        star.body.gravity.y = 500;
 
         //  This just gives each star a slightly random bounce value
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
@@ -153,7 +153,7 @@ function collectStar (player, star) {
     star.kill();
 
     //  Add and update the score
-    score += 10;
+    score += 100;
     scoreText.text = 'Score: ' + score;
 
 }
