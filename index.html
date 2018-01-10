@@ -21,7 +21,7 @@ function preload() {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('dude', 'assets/https://d1yn1kh78jj1rr.cloudfront.net/image/thumbnail/VphbM00/graphicstock-female-mouth-with-red-lips-sticking-tongue-out-in-cartoon-style_rtTMKxmOZ_thumb.jpg', 32, 48);
+    game.load.spritesheet('dude', 'assets/https://cdn.pixabay.com/photo/2014/04/03/11/55/mouth-312558_960_720.png', 32, 48);
 
 }
 
@@ -110,12 +110,14 @@ function update() {
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.collide(stars, platforms);
+	game.physics.arcade.collide(stars, player);
+	game.physics.arcade.collide(stars,stars);
 
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
-    game.physics.arcade.overlap(player, stars, collectStar, null, this);
+    //game.physics.arcade.overlap(player, stars, collectStar, null, this);
 
     //  Reset the players velocity (movement)
-    player.body.velocity.x = 6;
+    player.body.velocity.x = 9;
 
     if (cursors.left.isDown)
     {
