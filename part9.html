@@ -22,6 +22,10 @@ function preload() {
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+game.load.audio('background_music', 'assets/bgmusic.mp3');
+backgroundMusic = game.add.audio('background_music');
+backgroundMusic.loop = true;
+backgroundMusic.play();
 }
 
 var player;
@@ -153,6 +157,7 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
+sound.play()
 
 }
 
