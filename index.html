@@ -22,7 +22,10 @@ function preload() {
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('dude', 'assets/https://cdn.pixabay.com/photo/2014/04/03/11/55/mouth-312558_960_720.png', 32, 48);
-
+game.load.audio('background_music', 'assets/battleThemeA.mp3');
+backgroundMusic = game.add.audio('background_music');
+backgroundMusic.loop = true;
+backgroundMusic.play();
 }
 
 var player;
@@ -103,6 +106,26 @@ function create() {
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
     
+}
+	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+
+//keep original size
+//game.scale.fullScreenScaleMode = Phaser.ScaleManager.NO_SCALE;
+
+//Maintain aspect ratio
+game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+game.input.onDown.add(gofull, this);
+}
+function gofull() {
+	if (game.scale.isFullScreen)
+	{
+		game.scale.stopFullScree();
+	}
+	else
+	{
+		game.scale.startFullScreen(false);
+	};
 }
 
 function update() {
