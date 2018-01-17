@@ -146,6 +146,9 @@ function collectStar (player, star) {
     
     // Removes the star from the screen
     star.kill();
+score += 10;
+    scoreText.text = 'Score: ' + score;
+sound.play()
 
 }
 
