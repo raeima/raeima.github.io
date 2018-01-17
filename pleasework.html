@@ -138,18 +138,7 @@ function update() {
     if (cursors.up.isDown && player.body.touching.down){
         player.body.velocity.y = -350;
     }
-	if(onTheGround) {
-		this.jump = 2;
-		this.jump = false;
-	}
-	if(this.jumps > 0 && this.upInputIsActive(5)) {
-		this.player.body.velocity.y = this.JUMP_SPEED;
-		this.jumping = true;
-	}
-	if (this.jumping && this.upInputReleased()) {
-		this.jumps--;
-		this.jumping = false;
-	}
+	
 
 };
 
