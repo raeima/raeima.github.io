@@ -22,7 +22,7 @@ function preload() {
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-    game.load.spritesheet('killstar', 'assets/someexplosions.png', 100, 100);
+    //game.load.spritesheet('killstar', 'assets/someexplosions.png', 100, 100);
     //game.load.spritesheet('coin', 'assests/25-color.png', 116.67, 200);
 
 }
@@ -85,7 +85,7 @@ function create() {
     // Player flips while jumping in air
     //player.animations.add('up', 
     //coin.animations.add([1, 2, 3, 4, 5, 6], true);
-    killstar.animations.add([7, 8, 9, 10, 11, 12], true);
+    //killstar.animations.add([7, 8, 9, 10, 11, 12], true);
 
     //  Finally some stars to collect
     stars = game.add.group();
@@ -160,7 +160,7 @@ function collectStar (player, star) {
     
     // Removes the star from the screen
     star.kill();
-    killstar.animations.play(star.kill());
+    //killstar.animations.play(star.kill());
 	    
 	score += 10;
     scoreText.text = 'Score: ' + score;
