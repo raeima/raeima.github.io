@@ -121,7 +121,7 @@ function create() {
     pause_label = game.add.text(w - 100, 20, 'Pause', { font: '24px Arial', fill: '#fff' });
     pause_label.inputEnabled = true;
     pause_label.events.onInputUp.add(function () {
-        // When the paus button is pressed, we pause the game
+        // When the pause button is pressed, we pause the game
         game.paused = true;
 
         // Then add the menu
@@ -215,7 +215,8 @@ function collectStar (player, star) {
     
     // Removes the star from the screen
     star.kill();
-	if 
+	if (star.kill())
+		
 	    
 	score += 10;
     scoreText.text = 'Score: ' + score;
